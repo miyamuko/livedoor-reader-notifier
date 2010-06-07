@@ -1,0 +1,19 @@
+2006-06-14  MIYAMUKO Katsuyuki
+
+	* livedoor-reader-notifier 0.2 リリース
+
+	* ed::livedoor-reader-notifier-set-interval を追加。
+
+	* xyzzy 起動中に *livedoor-reader-notifier-update-interval* を
+	変更した場合でも変更が反映されるようにした。
+
+	* 最後に更新した時間を If-Modified-Since で送信するようにした。
+	たぶん意味は無い。
+
+	* メニューの文字列の typo 修正 ... orz
+	livedoore => livedoor
+
+2006-06-13  MIYAMUKO Katsuyuki
+
+	* livedoor-reader-notifier 0.1 リリース
+
