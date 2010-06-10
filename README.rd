@@ -1,4 +1,4 @@
-= livedoor-reader-notifier - livedoor Reader �̖��ǐ��� xyzzy ��ɕ\��
+= livedoor-reader-notifier - livedoor Reader の未読数を xyzzy 上に表示
 
   * Author: MIYAMUKO Katsuyuki ((<URL:mailto:miyamuko (at) gmail.com>))
   * URL: ((<URL:http://miyamuko.s56.xrea.com/xyzzy/livedoor-reader-notifier/intro.htm>))
@@ -7,105 +7,105 @@
 
 == SYNOPSIS
 
-* �u�c�[���v���j���[���ɖ��ǐ����\������܂��B
-  �N���b�N����ƃu���E�U���N������ livedoor Reader ���J���܂��B
+* 「ツール」メニュー内に未読数が表示されます。
+  クリックするとブラウザが起動して livedoor Reader を開きます。
 
-* �������ɖ��ǐ����X�V�������ꍇ�͈ȉ��̃R�}���h���~�j�o�b�t�@������s���܂��B
+* 今すぐに未読数を更新したい場合は以下のコマンドをミニバッファから実行します。
 
     M-x livedoor-reader-notifier-update-unread
 
 
 == DESCRIPTION
 
-livedoor-reader-notifier �� livedoor Reader �̖��ǐ��� xyzzy ��ɕ\�����܂��B
-�f�t�H���g�̐ݒ�ł� 10 ���� 1 ��A���ǐ����擾�����j���[�ɕ\�����܂��B
+livedoor-reader-notifier は livedoor Reader の未読数を xyzzy 上に表示します。
+デフォルトの設定では 10 分に 1 回、未読数を取得しメニューに表示します。
 
-�T�[�o�ւ̖₢���킹�͔񓯊��ɍs���Ă���̂ŁA���ǐ��̎擾���� xyzzy
-��ł̍�Ƃ��ז����܂���B
+サーバへの問い合わせは非同期に行っているので、未読数の取得中も xyzzy
+上での作業を邪魔しません。
 
 ((<"xml-http-request"|URL:http://miyamuko.s56.xrea.com/xyzzy/xml-http-request.html>))
-���C���X�g�[������K�v������܂��B
+をインストールする必要があります。
 
 
 === INSTALL
 
-((<NetInstaller|URL:http://www7a.biglobe.ne.jp/~hat/xyzzy/ni.html>)) �ŃC���X�g�[�������ꍇ�� 4 �ȍ~���A
-NetInstaller + (({ni-autoload})) ���g���Ă���l�� 5 �ȍ~�� OK �ł��B
+((<NetInstaller|URL:http://www7a.biglobe.ne.jp/~hat/xyzzy/ni.html>)) でインストールした場合は 4 以降を、
+NetInstaller + (({ni-autoload})) を使っている人は 5 以降で OK です。
 
 (1) ((<"xml-http-request"|URL:http://miyamuko.s56.xrea.com/xyzzy/xml-http-request.html>))
-    ���C���X�g�[�����܂��B
+    をインストールします。
 
-(2) �A�[�J�C�u���_�E�����[�h���܂��B
+(2) アーカイブをダウンロードします。
 
     ((<URL:http://miyamuko.s56.xrea.com/xyzzy/archives/livedoor-reader-notifier.zip>))
 
-(3) �A�[�J�C�u��W�J���āA$XYZZY/site-lisp �z���Ƀt�@�C�����R�s�[���܂��B
+(3) アーカイブを展開して、$XYZZY/site-lisp 配下にファイルをコピーします。
 
-(4) ~/.xyzzy �܂��� $XYZZY/site-lisp/siteinit.l �Ɉȉ��̃R�[�h��ǉ����܂��B
+(4) ~/.xyzzy または $XYZZY/site-lisp/siteinit.l に以下のコードを追加します。
 
         ;; livedoor-reader-notifier
         (require "livedoor-reader-notifier")
 
-(5) livedoor Reader �̃��O�C�����[�U����ݒ肵�܂��B
+(5) livedoor Reader のログインユーザ名を設定します。
 
-    �� ((< *livedoor-reader-notifier-user* >))
+    → ((< *livedoor-reader-notifier-user* >))
 
-(6) �ݒ�𔽉f�����邽�� xyzzy ���ċN�����Ă��������B
+(6) 設定を反映させるため xyzzy を再起動してください。
 
-    ��siteinit.l �ɋL�q�����ꍇ�ɂ͍ă_���v���K�v�ł��B
+    ※siteinit.l に記述した場合には再ダンプが必要です。
 
 
 === PACKAGE
 
-livedoor-reader-notifier �͈ȉ��̃p�b�P�[�W�𗘗p���Ă��܂��B
+livedoor-reader-notifier は以下のパッケージを利用しています。
 
 * editor
 
-  prefix �� livedoor-reader-notifier- �ł��B
+  prefix は livedoor-reader-notifier- です。
 
 
 === VARIABLE
 
 --- *livedoor-reader-notifier-user*
 
-    livedoor Reader �̃��O�C�� ID ��ݒ肵�܂��B
+    livedoor Reader のログイン ID を設定します。
 
     * ((<"livedoor Reader Notifier for Windows"|URL:http://reader.livedoor.com/utility/notifier/>))
-      ���C���X�g�[������Ă���ꍇ�͐ݒ肷��K�v�͂���܂��� (���W�X�g������擾���܂�)�B
+      がインストールされている場合は設定する必要はありません (レジストリから取得します)。
 
-    * ���O�C�� ID ���ݒ肳��Ă��Ȃ��ꍇ�̓~�j�o�b�t�@����₢���킹�܂��B
+    * ログイン ID が設定されていない場合はミニバッファから問い合わせます。
 
-        ;; ���O�C�� ID �̐ݒ�
-        (setf *livedoor-reader-notifier-user* "���Ȃ��̃��O�C�� ID")
+        ;; ログイン ID の設定
+        (setf *livedoor-reader-notifier-user* "あなたのログイン ID")
 
 
 --- *livedoor-reader-notifier-update-interval*
 
-    ���ǐ��̖₢���킹�Ԋu�𕪒P�ʂŎw�肵�܂��B
-    �f�t�H���g�� 10 (�� 10 ��) �ł��B
-    0 �ȉ��̒l�� nil ���w�肷��ƍX�V��������~���܂��B
+    未読数の問い合わせ間隔を分単位で指定します。
+    デフォルトは 10 (＝ 10 分) です。
+    0 以下の値や nil を指定すると更新処理が停止します。
 
-        ;; �X�V�Ԋu�� 30 ���ɂ���
+        ;; 更新間隔を 30 分にする
         (setf *livedoor-reader-notifier-update-interval* 30)
 
-    xyzzy �N�����ɂ��̕ϐ���ύX�����ꍇ�A���̍X�V���ɍX�V�Ԋu���ύX����܂��B
+    xyzzy 起動中にこの変数を変更した場合、次の更新時に更新間隔が変更されます。
 
-    �Ⴆ�΁A1 ���ԊԊu�ōX�V���Ă����Ƃ���:
+    例えば、1 時間間隔で更新していたときに:
 
-    * (A) �̃^�C�~���O�� 30 ���Ԋu�ɕύX����ƁA
-    * (B) �̃^�C�~���O�Ŕ��f����܂��B
+    * (A) のタイミングで 30 分間隔に変更すると、
+    * (B) のタイミングで反映されます。
 
         0:00        1:00        2:00        3:00
         |-----+-----|-----+-----|-----+-----|---
         *           *           *     *     *
                       (A)      (B)
 
-    ed::livedoor-reader-notifier-set-interval �֐��𗘗p����Ƃ����ɔ��f����܂��B
+    ed::livedoor-reader-notifier-set-interval 関数を利用するとすぐに反映されます。
 
-        ;; �X�V�Ԋu�� 30 ���ɂ��� (�����ɔ��f)
+        ;; 更新間隔を 30 分にする (すぐに反映)
         (ed::livedoor-reader-notifier-set-interval 30)
 
-    �ȉ��̂悤�ɂȂ�܂��B
+    以下のようになります。
 
         0:00        1:00        2:00        3:00
         |-----+-----|-----+-----|-----+-----|---
@@ -115,60 +115,60 @@ livedoor-reader-notifier �͈ȉ��̃p�b�P�[�W�𗘗p���Ă��܂��B
 
 --- *livedoor-reader-notifier-open-browser-function*
 
-    livedoor Reader ���J�����@���w�肵�܂��B
+    livedoor Reader を開く方法を指定します。
 
-    : ������
-        ��������w�肵���ꍇ�R�}���h�ƌ��Ȃ��܂��B
-        livedoor Reader �� URL �������ɂ��Ďw�肳�ꂽ�R�}���h�����s���܂��B
+    : 文字列
+        文字列を指定した場合コマンドと見なします。
+        livedoor Reader の URL を引数にして指定されたコマンドを実行します。
 
-            ;; firefox �Ŏ��s
+            ;; firefox で実行
             (setf *livedoor-reader-notifier-open-browser-function*
                   "C:/Program Files/Mozilla Firefox/firefox.exe")
 
-    : �֐�
-        �֐����w�肵���ꍇ URL �������ɂ��Ďw�肳�ꂽ�֐������s���܂��B
+    : 関数
+        関数を指定した場合 URL を引数にして指定された関数を実行します。
 
-            ;; browser-ex �Ŏ��s
+            ;; browser-ex で実行
             (setf *livedoor-reader-notifier-open-browser-function*
                   #'(lambda (url)
                       (bx:navigate url)))
 
     : nil
-        URL �Ɋ֘A�t�����Ă���f�t�H���g�u���E�U�ŊJ���܂��B
+        URL に関連付けられているデフォルトブラウザで開きます。
 
 
-    �f�t�H���g�� nil (�f�t�H���g�u���E�U�ŊJ��) �ł��B
+    デフォルトは nil (デフォルトブラウザで開く) です。
 
 
 --- *livedoor-reader-notifier-quiet*
 
-    ���̕ϐ��� non-nil ��ݒ肷��ƐÎ⃂�[�h�ɂȂ�܂��B
-    nil �̏ꍇ���ǐ��擾���ɃX�e�[�^�X�̈�ɖ��ǐ���\�����܂��B
+    この変数に non-nil を設定すると静寂モードになります。
+    nil の場合未読数取得時にステータス領域に未読数を表示します。
 
-    �f�t�H���g�� nil �ł��B
+    デフォルトは nil です。
 
 
 === COMMAND
 
 --- livedoor-reader-notifier-update-unread
 
-    livedoor Reader �̖��ǐ����X�V���܂��B
+    livedoor Reader の未読数を更新します。
 
 --- ed::livedoor-reader-notifier-set-interval minutes
 
-    �X�V�Ԋu��ύX���܂��B
+    更新間隔を変更します。
 
 
 === FUNCTION
 
-�Ȃ��B
+なし。
 
 
 === EXPORT
 
 ==== editor
 
-editor �p�b�P�[�W����͈ȉ��̕ϐ��ƃR�}���h�� export ���Ă��܂��B
+editor パッケージからは以下の変数とコマンドを export しています。
 
 * ((< *livedoor-reader-notifier-user* >))
 * ((< *livedoor-reader-notifier-update-interval* >))
@@ -179,28 +179,28 @@ editor �p�b�P�[�W����͈ȉ��̕ϐ��ƃR�}���h�� export ���Ă��܂��B
 
 == TODO
 
-* ���j���[�ɒǉ�����ꏊ�̎w����_��ɁB
-* �����������X�V�ʒm�B
-* ����炷�B
-* �G���[�����������Ƃ܂��߂ɁB
-* �u�������X�V�v���j���[
-* �c�[���o�[�ɃA�C�R����ǉ��B
-  * tooltip �Ŗ��ǐ���\���B
+* メニューに追加する場所の指定を柔軟に。
+* かっこいい更新通知。
+* 音を鳴らす。
+* エラー処理をもっとまじめに。
+* 「今すぐ更新」メニュー
+* ツールバーにアイコンを追加。
+  * tooltip で未読数を表示。
 
 
 == KNOWN BUGS
 
-�Ȃ��B
+なし。
 
 
 == AUTHORS
 
-�݂�ނ� ���䂫 (((<URL:mailto:miyamuko (at) gmail.com>)))
+みやむこ かつゆき (((<URL:mailto:miyamuko (at) gmail.com>)))
 
 
 == SEE ALSO
 
-: livedoor Reader - RSS���[�_�[ : �X�V�ʒm�A�v���P�[�V�����iNotifier�j
+: livedoor Reader - RSSリーダー : 更新通知アプリケーション（Notifier）
     ((<URL:http://reader.livedoor.com/utility/notifier/>))
 
 : xml-http-request
@@ -209,6 +209,6 @@ editor �p�b�P�[�W����͈ȉ��̕ϐ��ƃR�}���h�� export ���Ă��܂��B
 
 == COPYRIGHT
 
-livedoor-reader-notifier �� MIT/X ���C�Z���X�Ɋ�Â��ė��p�\�ł��B
+livedoor-reader-notifier は MIT/X ライセンスに基づいて利用可能です。
 
 see livedoor-reader-notifier/docs/MIT-LICENSE for full license.

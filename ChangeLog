@@ -1,6 +1,6 @@
 2006-09-05  MIYAMUKO Katsuyuki
 
-	* ƒRƒƒ“ƒg‚ÌƒXƒ^ƒCƒ‹‚ğ Common Lisp ‚ÌŠµK‚É‚ ‚í‚¹‚½B
+	* ã‚³ãƒ¡ãƒ³ãƒˆã®ã‚¹ã‚¿ã‚¤ãƒ«ã‚’ Common Lisp ã®æ…£ç¿’ã«ã‚ã‚ã›ãŸã€‚
 
 2006-09-04  MIYAMUKO Katsuyuki
 
@@ -11,27 +11,27 @@
 
 	* (livedoor-reader-notifier-rfc822-format-date): simplified.
 
-	* livedoor-reader-notifier.l: provide ‚·‚é‚Ì‚ğ–Y‚ê‚Ä‚¢‚½B
+	* livedoor-reader-notifier.l: provide ã™ã‚‹ã®ã‚’å¿˜ã‚Œã¦ã„ãŸã€‚
 
-	* ƒhƒLƒ…ƒƒ“ƒg‚ğ livedoor-reader-notifier.l ‚©‚ç docs/README.txt
-	‚ÉˆÚ“®B
+	* ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’ livedoor-reader-notifier.l ã‹ã‚‰ docs/README.txt
+	ã«ç§»å‹•ã€‚
 
 2006-06-14  MIYAMUKO Katsuyuki
 
-	* livedoor-reader-notifier 0.2 ƒŠƒŠ[ƒX
+	* livedoor-reader-notifier 0.2 ãƒªãƒªãƒ¼ã‚¹
 
-	* ed::livedoor-reader-notifier-set-interval ‚ğ’Ç‰ÁB
+	* ed::livedoor-reader-notifier-set-interval ã‚’è¿½åŠ ã€‚
 
-	* xyzzy ‹N“®’†‚É *livedoor-reader-notifier-update-interval* ‚ğ
-	•ÏX‚µ‚½ê‡‚Å‚à•ÏX‚ª”½‰f‚³‚ê‚é‚æ‚¤‚É‚µ‚½B
+	* xyzzy èµ·å‹•ä¸­ã« *livedoor-reader-notifier-update-interval* ã‚’
+	å¤‰æ›´ã—ãŸå ´åˆã§ã‚‚å¤‰æ›´ãŒåæ˜ ã•ã‚Œã‚‹ã‚ˆã†ã«ã—ãŸã€‚
 
-	* ÅŒã‚ÉXV‚µ‚½ŠÔ‚ğ If-Modified-Since ‚Å‘—M‚·‚é‚æ‚¤‚É‚µ‚½B
-	‚½‚Ô‚ñˆÓ–¡‚Í–³‚¢B
+	* æœ€å¾Œã«æ›´æ–°ã—ãŸæ™‚é–“ã‚’ If-Modified-Since ã§é€ä¿¡ã™ã‚‹ã‚ˆã†ã«ã—ãŸã€‚
+	ãŸã¶ã‚“æ„å‘³ã¯ç„¡ã„ã€‚
 
-	* ƒƒjƒ…[‚Ì•¶š—ñ‚Ì typo C³ ... orz
+	* ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®æ–‡å­—åˆ—ã® typo ä¿®æ­£ ... orz
 	livedoore => livedoor
 
 2006-06-13  MIYAMUKO Katsuyuki
 
-	* livedoor-reader-notifier 0.1 ƒŠƒŠ[ƒX
+	* livedoor-reader-notifier 0.1 ãƒªãƒªãƒ¼ã‚¹
 
