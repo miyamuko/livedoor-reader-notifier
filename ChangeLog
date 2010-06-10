@@ -1,3 +1,21 @@
+2006-09-05  MIYAMUKO Katsuyuki
+
+	* コメントのスタイルを Common Lisp の慣習にあわせた。
+
+2006-09-04  MIYAMUKO Katsuyuki
+
+	* - *livedoor-reader-notifier-ignore-unread-threshold*
+	    => *livedoor-reader-notifier-notify-threshold*
+	  - *livedoor-reader-notifier-disable-menu-p*
+	    => *livedoor-reader-notifier-disable-p*
+
+	* (livedoor-reader-notifier-rfc822-format-date): simplified.
+
+	* livedoor-reader-notifier.l: provide するのを忘れていた。
+
+	* ドキュメントを livedoor-reader-notifier.l から docs/README.txt
+	に移動。
+
 2006-06-14  MIYAMUKO Katsuyuki
 
 	* livedoor-reader-notifier 0.2 リリース
